@@ -28,7 +28,7 @@ def inversion_evidence(bam_10x,chr, start,end):
         #if read.is_secondary:
         #    print aln_tags['SA']
         if aln_tags.has_key('BX'):
-            BX_codes.append(dict(read.tags)['BX'])
+            BX_codes.append(aln_tags['BX'])
         read_ids.append(read.qname)
         insert_size.append(read.isize)
         if aln_tags.has_key('SA'):
