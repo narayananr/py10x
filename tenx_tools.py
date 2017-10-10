@@ -18,7 +18,6 @@ start='120827191'
 end='120827192'
 
 
-# In[ ]:
 
 def inversion_evidence(bam_10x,chr, start,end):
     """
@@ -58,10 +57,6 @@ def inversion_evidence(bam_10x,chr, start,end):
     
     #return insert_size
 
-                        
-
-
-# In[ ]:
 
 def get_BX_barcodes(bam_10x_fh, chro,start,end):
     """
@@ -76,8 +71,6 @@ def get_BX_barcodes(bam_10x_fh, chro,start,end):
             BX_codes.append(dict(read.tags)['BX'])
     return np.array(BX_codes)
 
-
-# In[ ]:
 
 def count_barcode_overlaps(bam_10x, chr_b1,start_b1,end_b1, chr_b2,start_b2,end_b2):
     """
