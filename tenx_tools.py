@@ -1,8 +1,4 @@
 
-# coding: utf-8
-
-# In[2]:
-
 import pysam
 import os
 import sys
@@ -10,7 +6,6 @@ from collections import defaultdict
 import numpy as np
 
 
-# In[ ]:
 
 bam_10x='phased_possorted_bam.bam'
 chr= 'chr6'
@@ -100,10 +95,3 @@ def count_barcode_overlaps(bam_10x, chr_b1,start_b1,end_b1, chr_b2,start_b2,end_
     BX_olaps = np.intersect1d(BX_codes1,BX_codes2)
     return BX_olaps.size[0]
     
-
-
-# In[3]:
-
-##bp2
-start=
-
