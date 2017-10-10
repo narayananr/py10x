@@ -5,27 +5,18 @@ import sys
 from collections import defaultdict
 import numpy as np
 
-
-
-bam_10x='phased_possorted_bam.bam'
-chr= 'chr6'
-start='63000852'
-end='63000853'
-start='63000846'
-end='63000847'
-#
-start='120827191'
-end='120827192'
-
-
-
 def inversion_evidence(bam_10x,chr, start,end):
     """
     Finds evidence of inversion in an interval.
-
     Input:
+    -----
+    bam_10x='phased_possorted_bam.bam'
+    chr= 'chr6'
+    start='63000852'
+    end='63000853'
     
     Output
+    ------
     """
     sam_file = pysam.Samfile(bam_10x, 'rb')
     BX_codes=[]
@@ -54,14 +45,13 @@ def inversion_evidence(bam_10x,chr, start,end):
     isize_gt_1k= np.sum(np.array(insert_size)>1000)
     print "Num. reads" + "\t" + "Num. barcodes"+"\t"+ "isize >1000"+"\t"+ "Suppl"+"\n"
     print  str(len(set(read_ids)))+ "\t"+str(len(set(BX_codes)))+ "\t"+ str(isize_gt_1k)+ "\t"+str(len(supp_aln))
-    
     #return insert_size
 
 
 def get_BX_barcodes(bam_10x_fh, chro,start,end):
     """
     gets BX barcodes in a given genomic location
-    
+    Input: pysam file handler for bam file and genomic location info
     """
     BX_codes=[]
     for read in bam_10x_fh.fetch(chro, int(start)-1, int(end)-1):
